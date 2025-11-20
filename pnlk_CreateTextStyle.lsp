@@ -1,6 +1,6 @@
 (defun c:CreateTextStyle (/ styleName)
     ;; Создание текстового стиля
-    (setq styleName "pnlkMyTextStyle")
+    (setq styleName "pnlkMyTextStyle_CreateTextStyle")
     
     ;; Проверка существования стиля
     (if (tblsearch "STYLE" styleName)
@@ -28,7 +28,7 @@
 (defun c:CreateTextStyleVLA (/ acadApp acadDoc textStyles newStyle)
     (vl-load-com) ; Загрузка COM-функций
     
-    (setq styleName "pnlkMyTextStyle")
+    (setq styleName "pnlkMyTextStyle_CreateTextStyleVLA")
     
     ;; Проверка существования стиля
     (if (tblsearch "STYLE" styleName)
@@ -58,7 +58,7 @@
 
 ;; Создание стиля с SHX шрифтом
 (defun c:CreateTextStyleSHX (/ styleName)
-    (setq styleName "pnlkMyTextStyle")
+    (setq styleName "pnlkMyTextStyle_CreateTextStyleSHX")
     
     (if (tblsearch "STYLE" styleName)
         (princ (strcat "\nТекстовый стиль \"" styleName "\" уже существует."))
@@ -84,7 +84,7 @@
 (defun c:CreateTextStyleDetailed (/ acadApp acadDoc textStyles newStyle)
     (vl-load-com)
     
-    (setq styleName "pnlkMyTextStyle")
+    (setq styleName "pnlkMyTextStyle_CreateTextStyleDetailed")
     
     (if (tblsearch "STYLE" styleName)
         (princ (strcat "\nТекстовый стиль \"" styleName "\" уже существует."))
@@ -123,7 +123,7 @@
 (defun c:CheckTextStyle (/ acadApp acadDoc textStyles styleObj found)
     (vl-load-com)
     
-    (setq styleName "pnlkMyTextStyle")
+    (setq styleName "pnlkMyTextStyle_CheckTextStyle")
     
     (setq acadApp (vlax-get-acad-object))
     (setq acadDoc (vla-get-activedocument acadApp))
